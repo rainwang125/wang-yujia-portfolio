@@ -1,0 +1,57 @@
+/* 首页标题与横版关于我布局 */
+.hero-checker h1,.hero-checker h1 em{font-family:'Noto Sans SC',sans-serif;font-weight:700;letter-spacing:.1em;line-height:1.04;font-style:normal;-webkit-font-smoothing:none;text-shadow:1px 0 0 currentColor,0 1px 0 currentColor,1px 1px 0 currentColor}.hero-checker h1{color:var(--ink)}.hero-checker h1 em{margin-left:.08em;color:var(--hot)}.portrait-card{padding:0;background:transparent;border:0;box-shadow:none;transform:none}.portrait-photo{position:relative;overflow:visible!important;height:auto!important;aspect-ratio:1733/1835;border:0!important;outline:0;box-shadow:none;background:transparent}.portrait-photo img,.about-grid .portrait-photo img{position:static;display:block;width:100%;height:100%;max-width:none;object-fit:contain;transform:none}.portrait-card i{display:block;margin:10px auto 0;text-align:center;font-size:27px;line-height:1.1;transform:translateX(-2em)}.about-ending{margin:12px 0 0}.about-story{margin-top:24px}.about-followup{margin-top:22px}@media(min-width:701px){.about-grid{grid-template-areas:'portrait info' 'followup info';column-gap:72px;row-gap:28px}.about-grid .portrait-card{grid-area:portrait;align-self:start;justify-self:center;width:100%;max-width:365px;margin-top:0;transform:translateX(1em)}.about-copy{grid-area:info;align-self:start;background:#fff5e9;padding:22px 25px 26px;border:1px solid rgba(77,53,64,.18);box-shadow:4px 4px 0 rgba(244,124,175,.34)}.about-followup{grid-area:followup;align-self:start;margin:0;padding:0;background:transparent;border:0;box-shadow:none}.about-story{margin:0}.about-story p{margin:0}.about-story .about-ending{margin-top:12px}.about-story .about-ending b{display:block;margin-top:7px}.about-followup .skills{margin:18px 0}.about-grid .portrait-photo{width:100%;height:auto!important;clip-path:none}}@media(max-width:700px){.about-grid .portrait-card{width:min(86vw,330px);max-width:none;margin:0 auto}.portrait-card i{margin-top:9px;font-size:24px}.about-followup{margin-top:0}}
+
+/* 横版标签与策划项目标题保持单行 */
+#planning-grid .work-info h2{white-space:nowrap;font-size:20px}
+@media(min-width:701px){.about-followup{margin-top:-28px}.about-followup .skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin:46px 0 18px}.about-followup .skills span{padding:6px 5px;font-size:11px;text-align:center;white-space:nowrap}.about-story .about-ending b{white-space:nowrap;font-size:14px}}
+
+/* 标题的细颗粒笔刷质感 */
+.hero-checker h1{background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.22) 0 .65px,transparent .8px),linear-gradient(var(--ink),var(--ink));background-size:5px 5px,100% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}.hero-checker h1 em{background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.25) 0 .65px,transparent .8px),linear-gradient(var(--hot),var(--hot));background-size:5px 5px,100% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* 打破规整字面的笔刷错位、颗粒与收笔 */
+.hero-checker h1{filter:drop-shadow(2px 2px 0 rgba(255,249,237,.7));transform:rotate(-.6deg)}.hero-checker .title-line{display:inline-block;transform:rotate(-1.15deg) skewX(-2deg);transform-origin:center bottom}.hero-checker h1 em{display:inline-block;transform:rotate(1.2deg) skewX(-1deg) scaleY(1.045);transform-origin:center bottom;text-shadow:1px 0 0 currentColor,0 1px 0 currentColor,2px 1px 0 currentColor}.hero-checker .title-tail{display:inline-block;transform:translateY(3px) rotate(-.8deg) skewX(-2.5deg);transform-origin:left bottom}.hero-checker .title-line,.hero-checker .title-tail{background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.34) 0 1px,transparent 1.25px),linear-gradient(var(--ink),var(--ink));background-size:7px 7px,100% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:1px 0 0 currentColor,0 1px 0 currentColor}
+
+/* 稳定渲染：保留像素感，不使用可能导致异常的文字遮罩 */
+.hero-checker h1,.hero-checker h1 em,.hero-checker .title-line,.hero-checker .title-tail{background:none!important;-webkit-text-fill-color:currentColor!important;filter:none!important;transform:none!important}.hero-checker h1,.hero-checker .title-line,.hero-checker .title-tail{color:var(--ink)!important}.hero-checker h1 em{color:var(--hot)!important}.hero-checker h1{font-family:'Noto Sans SC',sans-serif!important;font-weight:700!important;text-shadow:1px 0 0 currentColor,0 1px 0 currentColor,1px 1px 0 currentColor!important}
+
+/* 稳定的油画笔触：用书写体和轻微颜料堆叠替代文字遮罩 */
+.hero-checker h1,.hero-checker h1 em,.hero-checker .title-line,.hero-checker .title-tail{font-family:'Ma Shan Zheng',cursive!important;font-weight:400!important;letter-spacing:.08em!important;-webkit-text-stroke:.55px currentColor;text-shadow:1px 0 0 currentColor,0 1px 0 currentColor,1px 1px 0 rgba(255,249,237,.72)!important}.hero-checker h1{line-height:1.08!important}
+
+/* 以用户提供的透明哥特字稿呈现首页标题 */
+.hero-checker h1.hero-title-gothic{display:flex!important;width:min(82vw,760px);margin:16px auto 13px!important;gap:9px;align-items:center;flex-direction:column;background:none!important;color:transparent!important;filter:none!important;transform:none!important;text-shadow:none!important;-webkit-text-stroke:0!important;line-height:0!important}.hero-title-gothic img{display:block;height:auto;max-width:100%;object-fit:contain}.hero-title-gothic .hero-title-top{width:72%;filter:brightness(0) saturate(100%)}.hero-title-gothic .hero-title-bottom{width:100%}
+
+/* 可编辑的中文哥特风标题：仅“奇思妙想”使用粉色 */
+.hero-checker h1,.hero-checker h1 em,.hero-checker .title-line,.hero-checker .title-tail{display:inline!important;width:auto!important;margin:0!important;background:none!important;-webkit-text-fill-color:currentColor!important;font-family:'Noto Serif SC','Songti SC',serif!important;font-weight:900!important;letter-spacing:.065em!important;line-height:1.04!important;font-style:normal!important;filter:none!important;transform:none!important;text-shadow:1px 1px 0 rgba(255,249,237,.75)!important;-webkit-text-stroke:.35px currentColor!important}.hero-checker h1{display:block!important;color:var(--ink)!important;margin:16px 0 13px!important}.hero-checker h1 em{color:var(--hot)!important;margin-left:.07em!important}.hero-checker .title-line,.hero-checker .title-tail{color:var(--ink)!important}
+
+/* 不规则的手工印刷排版，让哥特标题更有呼吸感 */
+.hero-checker .title-line,.hero-checker h1 em,.hero-checker .title-tail{display:inline-block!important}.hero-checker .title-line{transform:rotate(-1.15deg) skewX(-1deg)!important;transform-origin:center bottom}.hero-checker h1 em{transform:translateY(2px) rotate(1.2deg) skewX(-1.2deg) scaleY(1.045)!important;transform-origin:center bottom;text-shadow:2px 1px 0 rgba(77,53,64,.16),1px 1px 0 rgba(255,249,237,.75)!important}.hero-checker .title-tail{transform:translateY(3px) rotate(-.8deg)!important;transform-origin:left bottom}.hero-checker h1::after{content:'✦';display:inline-block;margin-left:.15em;color:var(--hot);font:26px/1 'Noto Serif SC',serif;transform:rotate(14deg) translateY(-.35em)}
+
+/* 更自由的倾斜笔势与标题点缀 */
+.hero-checker h1{position:relative}.hero-checker .title-line{transform:rotate(-3deg) skewX(-2deg)!important}.hero-checker h1 em{transform:translateY(4px) rotate(3deg) skewX(-2deg) scaleY(1.035)!important;text-shadow:none!important}.hero-checker .title-tail{transform:translateY(6px) rotate(-2.2deg)!important}.hero-checker h1::before,.hero-checker h1::after{position:absolute;display:block;margin:0;text-shadow:none}.hero-checker h1::before{content:'✦';left:13%;top:-.2em;color:var(--hot);font:28px/1 serif;transform:rotate(-18deg)}.hero-checker h1::after{content:'♡';right:13%;bottom:-.15em;color:var(--ink);font:28px/1 serif;transform:rotate(14deg)}
+
+/* 恢复简洁、普通的标题样式 */
+.hero-checker h1,.hero-checker h1 em,.hero-checker .title-line,.hero-checker .title-tail{font-family:'Noto Sans SC',sans-serif!important;font-weight:900!important;letter-spacing:.08em!important;font-style:normal!important;-webkit-text-stroke:0!important;text-shadow:none!important;transform:none!important}.hero-checker h1{position:static;line-height:.98!important}.hero-checker h1::before,.hero-checker h1::after{content:none!important}.hero-checker h1 em{color:var(--hot)!important;margin-left:.06em!important}
+
+/* 清晰的艺术海报字：高对比衬线与柔和色块投影 */
+.hero-checker h1,.hero-checker h1 em,.hero-checker .title-line,.hero-checker .title-tail{font-family:'Noto Serif SC','Songti SC',serif!important;font-weight:900!important;letter-spacing:.055em!important;-webkit-text-stroke:.35px currentColor!important}.hero-checker h1{line-height:1.03!important;text-shadow:3px 3px 0 rgba(255,244,238,.88)!important}.hero-checker h1 em{display:inline-block!important;transform:translateY(2px) rotate(-1.4deg)!important;text-shadow:3px 3px 0 rgba(255,224,238,.86)!important}.hero-checker .title-line{display:inline-block!important;transform:rotate(-.7deg)!important}.hero-checker .title-tail{display:inline-block!important;transform:translateY(1px) rotate(.8deg)!important}
+
+/* 粉色关键词以手绘字形突出 */
+.hero-checker h1 em{font-family:'Ma Shan Zheng',cursive!important;font-weight:400!important;font-size:1.12em;letter-spacing:.11em!important;-webkit-text-stroke:.2px currentColor!important}
+
+/* 无衬线主标题，粉色关键词采用练笔手写感 */
+.hero-checker h1,.hero-checker .title-line,.hero-checker .title-tail{font-family:'Noto Sans SC',sans-serif!important;font-weight:900!important;-webkit-text-stroke:0!important}.hero-checker h1 em{font-family:'Zhi Mang Xing','Ma Shan Zheng',cursive!important;font-weight:400!important;font-size:1.18em;letter-spacing:.08em!important;-webkit-text-stroke:0!important;transform:translateY(4px) rotate(-2.4deg)!important}
+
+/* 替换为更具毛笔挥洒感的关键词字形 */
+.hero-checker h1 em{font-family:'Liu Jian Mao Cao','Ma Shan Zheng',cursive!important;font-size:1.16em;letter-spacing:.06em!important;transform:translateY(4px) rotate(-1.8deg)!important}
+
+/* 楷书练字感：笔画舒展、仍保持清晰可读 */
+.hero-checker h1 em{font-family:'Kaiti SC','STKaiti','KaiTi',cursive!important;font-weight:700!important;font-size:1.14em;letter-spacing:.09em!important;transform:translateY(3px) rotate(-1.2deg)!important}
+
+/* 更具艺术签名字感的涂鸦手写字 */
+.hero-checker h1 em{font-family:'HanziPen SC','Hannotate SC','Kaiti SC',cursive!important;font-weight:400!important;font-size:1.22em;letter-spacing:.03em!important;transform:translateY(5px) rotate(-3deg)!important}
+
+/* 保留当前字形，仅轻微加厚笔画 */
+.hero-checker h1 em{-webkit-text-stroke:.35px currentColor!important}
+
+/* 平滑边缘并均匀加粗，避免像素锯齿 */
+.hero-checker h1 em{-webkit-font-smoothing:antialiased!important;-moz-osx-font-smoothing:grayscale!important;-webkit-text-stroke:.65px currentColor!important;text-shadow:none!important}

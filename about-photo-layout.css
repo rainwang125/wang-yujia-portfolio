@@ -1,0 +1,2 @@
+/* 横屏与桌面端：放大并垂直居中个人照片 */
+@media(min-width:701px){.about-grid .portrait-card{align-self:center}.about-grid .portrait-photo{width:100%;height:390px;margin-left:0}.about-grid .portrait-photo img{height:calc(100% + 24px);transform:translateY(-18px) scale(1.22);transform-origin:center top;object-position:center center}}
