@@ -15,7 +15,7 @@
     <main class="gallery"><p>PROJECT GALLERY</p><h1 id="project-title">策划项目</h1><div class="gallery-grid" id="gallery-grid"></div></main>
     <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片放大预览"><button type="button" aria-label="关闭图片预览">×</button><img alt="放大预览" /></div>
     <script>
-      const projects={market:{title:'汉服社国风市集活动',images:['王愉嘉-策划作品集/汉服社国风市集活动.png','王愉嘉-策划作品集/汉服社国风市集活动2.png']},ceremony:{title:'汉服社及笄礼',images:['王愉嘉-策划作品集/汉服社及笄礼.png','王愉嘉-策划作品集/汉服社及笄礼2.png']}};
+      const projects={market:{title:'汉服社国风市集活动',images:['web-assets/planning/market-1.jpg','web-assets/planning/market-2.jpg']},ceremony:{title:'汉服社及笄礼',images:['web-assets/planning/ceremony-1.jpg','web-assets/planning/ceremony-2.jpg']}};
       const project=projects[new URLSearchParams(location.search).get('project')]||projects.market;
       document.title=`${project.title} · 王愉嘉作品集`;document.getElementById('project-title').textContent=project.title;
       const grid=document.getElementById('gallery-grid');const lightbox=document.getElementById('lightbox');const lightboxImage=lightbox.querySelector('img');
