@@ -360,3 +360,79 @@ body{letter-spacing:.025em;line-height:1.65}h1,h2,h3{word-break:normal;overflow-
   #screenplays-grid.ring-book .script-ticket::after{bottom:-6px}
   .album-page-number{font-size:6px;letter-spacing:.02em;left:8px;right:8px}
 }
+
+/* 2026-09 手机端细节：完整入场券、信息优先、竖票根与紧凑银幕。 */
+@media(max-width:700px){
+  /* 首页：把悬挂入场券收进售票台可视范围，窄屏不再切边。 */
+  #home .ticket-booth{width:min(340px,92vw);max-width:100%;overflow:visible}
+  #home .admission-ticket{
+    left:50%;
+    bottom:34px;
+    width:min(205px,72vw);
+    translate:-50% 0;
+    transform:rotate(-3deg);
+  }
+  #home .admission-ticket:hover,
+  #home .admission-ticket:focus-visible{transform:rotate(0deg) translateY(-5px)}
+
+  /* 关于我：照片 → 个人信息 → 创作者自述与技能。 */
+  #about .about-grid{display:flex;flex-direction:column}
+  #about .creator-column{display:contents}
+  #about .portrait-card{order:1}
+  #about .about-copy{order:2}
+  #about .about-followup{order:3;width:100%;max-width:520px;margin-inline:auto}
+
+  /* 剧本册：保留双页与中缝装订，单张票根改成竖版构图。 */
+  #screenplays-grid.ring-book .script-ticket:nth-child(n){
+    grid-template-columns:minmax(0,1fr);
+    grid-template-rows:minmax(0,1fr) auto;
+    width:86%;
+    justify-self:center;
+    align-self:center;
+    min-height:334px;
+  }
+  #screenplays-grid.ring-book .ticket-body{padding:16px 9px 12px}
+  #screenplays-grid.ring-book .ticket-body h2{font-size:17px;line-height:1.45;margin:9px 0 5px}
+  #screenplays-grid.ring-book .ticket-body p{font-size:10px;line-height:1.55;margin-block:6px}
+  #screenplays-grid.ring-book .ticket-read{padding-top:5px}
+  #screenplays-grid.ring-book .ticket-stub{
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    gap:4px;
+    padding:7px 8px;
+    border-left:0;
+    border-top:2px dashed #ab806b;
+  }
+  #screenplays-grid.ring-book .ticket-stub b{font-size:16px}
+  #screenplays-grid.ring-book .ticket-stub span{font-size:8px;writing-mode:horizontal-tb}
+  #screenplays-grid.ring-book .ticket-stub i{width:20px;height:18px}
+  #screenplays-grid.ring-book .script-ticket::before,
+  #screenplays-grid.ring-book .script-ticket::after{
+    top:auto;
+    bottom:38px;
+    width:12px;
+    height:12px;
+  }
+  #screenplays-grid.ring-book .script-ticket::before{left:-6px;right:auto}
+  #screenplays-grid.ring-book .script-ticket::after{left:auto;right:-6px}
+
+  /* 导演作品：缩短影院纵深，四块银幕靠拢但仍保留悬停空间。 */
+  #directing .cinema-reel{padding-inline:14px;padding-bottom:64px}
+  #directing .virtual-cinema{margin-top:14px}
+  #directing .cinema-viewport{height:430px;border-radius:22px 22px 8px 8px}
+  #directing .cinema-instructions{margin-bottom:7px}
+  #directing .virtual-screen,
+  #directing .virtual-screen--4{width:43%}
+  #directing .virtual-screen--1,
+  #directing .virtual-screen--3{left:4%}
+  #directing .virtual-screen--2,
+  #directing .virtual-screen--4{left:53%}
+  #directing .virtual-screen--1,
+  #directing .virtual-screen--2{top:8%}
+  #directing .virtual-screen--3,
+  #directing .virtual-screen--4{top:52%}
+  #directing .virtual-screen-image{border-width:5px;border-bottom-width:11px}
+  #directing .virtual-screen small{margin-top:5px}
+  #directing .virtual-screen h2{font-size:12px;line-height:1.35;margin-top:1px}
+}
