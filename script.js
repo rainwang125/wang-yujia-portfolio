@@ -28,7 +28,7 @@ function renderWorks() {
               <i class="cinema-ceiling" aria-hidden="true"></i><i class="cinema-floor" aria-hidden="true"></i>
               ${works.map((work, index) => `
                 <a class="virtual-screen virtual-screen--${index + 1}" href="${work.link || '#'}" ${work.link && work.link !== '#' ? 'target="_blank" rel="noreferrer"' : ''}>
-                  <div class="virtual-screen-image" ${work.image ? `data-image="${work.image}"` : ''}><span>0${index + 1}</span><b>▶</b></div>
+                  <div class="virtual-screen-image" ${work.image ? `data-image="${work.image}"` : ''}>${work.video ? `<video src="${work.video}#t=0.1" muted playsinline preload="metadata" aria-label="${work.title}视频预览"></video>` : ''}<span>0${index + 1}</span><b>▶</b></div>
                   <small>${work.type}</small><h2>${work.title}</h2>
                 </a>`).join('')}
             </div>

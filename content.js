@@ -21,7 +21,8 @@ const portfolioWorks = {
     { number: "01", title: "《双生》", type: "导演作品", description: "点击前往 Bilibili 观看完整作品。", tag: "Bilibili", color: "pink", link: "https://www.bilibili.com/video/BV1NiuH6hERH/", image: "web-assets/covers/directing/twins.jpg" },
     { number: "02", title: "《Speculum》", type: "导演作品", description: "点击前往 Bilibili 观看完整作品。", tag: "Bilibili", color: "sky", link: "https://www.bilibili.com/video/BV17wuK6BEoN/", image: "web-assets/covers/directing/speculum.jpg" },
     { number: "03", title: "《马拉美的婚礼》", type: "导演作品", description: "点击前往 Bilibili 观看完整作品。", tag: "Bilibili", color: "butter", link: "https://www.bilibili.com/video/BV1MjtJ63E9K/", image: "web-assets/covers/directing/wedding.jpg" },
-    { number: "04", title: "《我与我》", type: "导演作品", description: "点击前往 Bilibili 观看完整作品。", tag: "Bilibili", color: "lilac", link: "https://www.bilibili.com/video/BV12Ptn6METS/", image: "web-assets/covers/directing/self.jpg" }
+    { number: "04", title: "《我与我》", type: "导演作品", description: "点击前往 Bilibili 观看完整作品。", tag: "Bilibili", color: "lilac", link: "https://www.bilibili.com/video/BV12Ptn6METS/", image: "web-assets/covers/directing/self.jpg" },
+    { number: "05", title: "《最后的心跳ai》", type: "AI 视频作品", description: "点击播放视频作品。", tag: "Video", color: "peach", link: "web-assets/videos/last-heartbeat-ai-web.mp4", video: "web-assets/videos/last-heartbeat-ai-web.mp4" }
   ],
   planning: [
     { number: "01", title: "汉服社国风市集活动", type: "校园活动策划", description: "以传统文化体验为核心，设计国风换装、民俗游戏、手作与舞台展示。", tag: "Event Planning", color: "mint", link: "planning-gallery.html?project=market", image: "web-assets/covers/planning/market-1.jpg", gallery: ["web-assets/planning/market-1.jpg", "web-assets/planning/market-2.jpg"] },

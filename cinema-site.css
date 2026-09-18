@@ -228,6 +228,14 @@ body{letter-spacing:.025em;line-height:1.65}h1,h2,h3{word-break:normal;overflow-
   #screenplays-grid .ticket-stub small{font-size:6px}
   #screenplays-grid .script-ticket::before,#screenplays-grid .script-ticket::after{right:53px}
 }
+
+/* 第五块导演银幕：本地视频预览。 */
+.virtual-screen-image video{display:block;width:100%;height:100%;object-fit:cover}
+#directing .virtual-screen--5{left:32.5%;right:auto;top:62%;bottom:auto;width:35%;transform:translateZ(-20px)}
+@media(max-width:800px){
+  #directing .cinema-viewport{height:660px}
+  #directing .virtual-screen--5{left:28.5%;top:73%;width:43%;transform:none}
+}
 @media(prefers-reduced-motion:reduce){.ticket-picker-window{scroll-behavior:auto}#screenplays-grid .script-ticket:nth-child(n){transition:none}}
 
 /* 策划作品自助售票机，屏幕完整显示封面。 */
@@ -435,4 +443,53 @@ body{letter-spacing:.025em;line-height:1.65}h1,h2,h3{word-break:normal;overflow-
   #directing .virtual-screen-image{border-width:5px;border-bottom-width:11px}
   #directing .virtual-screen small{margin-top:5px}
   #directing .virtual-screen h2{font-size:12px;line-height:1.35;margin-top:1px}
+}
+
+@media(max-width:800px){
+  #directing .cinema-viewport{height:650px}
+  #directing .virtual-screen--5{left:28.5%;right:auto;top:73%;bottom:auto;width:43%;transform:none}
+}
+
+/* 导演放映厅：五部作品完整排布，封面不裁切，标题预留固定空间。 */
+#directing .cinema-viewport{height:850px}
+#directing .virtual-screen-image{
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-color:#171117;
+}
+#directing .virtual-screen-image video{object-fit:contain;background:#171117}
+#directing .virtual-screen{width:30%;bottom:auto}
+#directing .virtual-screen h2{min-height:2.8em;line-height:1.4;text-wrap:balance}
+#directing .virtual-screen--1{left:16%;right:auto;top:5%;transform:translateZ(25px) rotateY(8deg)}
+#directing .virtual-screen--2{left:54%;right:auto;top:5%;transform:translateZ(25px) rotateY(-8deg)}
+#directing .virtual-screen--5{left:34%;right:auto;top:36%;width:32%;transform:translateZ(75px)}
+#directing .virtual-screen--3{left:16%;right:auto;top:68%;transform:translateZ(15px) rotateY(8deg)}
+#directing .virtual-screen--4{left:54%;right:auto;top:68%;width:30%;transform:translateZ(15px) rotateY(-8deg)}
+
+@media(max-width:800px){
+  #directing .cinema-viewport{height:760px}
+  #directing .virtual-screen,
+  #directing .virtual-screen--4,
+  #directing .virtual-screen--5{width:42%;transform:none}
+  #directing .virtual-screen--1{left:5%;right:auto;top:3%}
+  #directing .virtual-screen--2{left:53%;right:auto;top:3%}
+  #directing .virtual-screen--5{left:29%;right:auto;top:34%}
+  #directing .virtual-screen--3{left:5%;right:auto;top:66%}
+  #directing .virtual-screen--4{left:53%;right:auto;top:66%}
+  #directing .virtual-screen h2{min-height:2.7em;font-size:12px;line-height:1.35}
+}
+
+@media(max-width:420px){
+  #directing .cinema-reel{padding-inline:10px}
+  #directing .cinema-viewport{height:720px}
+  #directing .virtual-screen,
+  #directing .virtual-screen--4,
+  #directing .virtual-screen--5{width:43%}
+  #directing .virtual-screen--1{left:4%}
+  #directing .virtual-screen--2{left:53%}
+  #directing .virtual-screen--5{left:28.5%;top:34%}
+  #directing .virtual-screen--3{left:4%;top:66%}
+  #directing .virtual-screen--4{left:53%;top:66%}
+  #directing .virtual-screen small{font-size:8px;line-height:1.35}
+  #directing .virtual-screen h2{font-size:11px;min-height:3em}
 }
