@@ -490,6 +490,15 @@ body{letter-spacing:.025em;line-height:1.65}h1,h2,h3{word-break:normal;overflow-
   #directing .virtual-screen--5{left:28.5%;top:34%}
   #directing .virtual-screen--3{left:4%;top:66%}
   #directing .virtual-screen--4{left:53%;top:66%}
-  #directing .virtual-screen small{font-size:8px;line-height:1.35}
-  #directing .virtual-screen h2{font-size:11px;min-height:3em}
+  #directing .virtual-screen small{
+    position:relative;
+    z-index:3;
+    display:block;
+    min-height:14px;
+    margin-top:15px;
+    font-size:8px;
+    line-height:1.5;
+    overflow:visible;
+  }
+  #directing .virtual-screen h2{position:relative;z-index:3;margin-top:2px;font-size:11px;min-height:3em}
 }
