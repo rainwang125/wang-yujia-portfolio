@@ -480,16 +480,17 @@ body{letter-spacing:.025em;line-height:1.65}h1,h2,h3{word-break:normal;overflow-
 }
 
 @media(max-width:420px){
-  #directing .cinema-reel{padding-inline:10px}
-  #directing .cinema-viewport{height:720px}
+  #directing .cinema-reel{padding-inline:10px;padding-bottom:48px}
+  #directing .virtual-cinema{margin-top:10px}
+  #directing .cinema-viewport{height:620px}
   #directing .virtual-screen,
   #directing .virtual-screen--4,
   #directing .virtual-screen--5{width:43%}
   #directing .virtual-screen--1{left:4%}
   #directing .virtual-screen--2{left:53%}
   #directing .virtual-screen--5{left:28.5%;top:34%}
-  #directing .virtual-screen--3{left:4%;top:66%}
-  #directing .virtual-screen--4{left:53%;top:66%}
+  #directing .virtual-screen--3{left:4%;top:65%}
+  #directing .virtual-screen--4{left:53%;top:65%}
   #directing .virtual-screen small{
     position:relative;
     z-index:3;
