@@ -503,3 +503,103 @@ body{letter-spacing:.025em;line-height:1.65}h1,h2,h3{word-break:normal;overflow-
   }
   #directing .virtual-screen h2{position:relative;z-index:3;margin-top:2px;font-size:11px;min-height:3em}
 }
+
+/* 导演放映厅：窄屏改用内容驱动的 2–1–2 网格，避免任何比例下标题被裁切。 */
+@media(max-width:800px){
+  #directing .page-title p{font-size:clamp(10px,2.4vw,12px);line-height:1.6}
+  #directing .page-title small{font-size:clamp(12px,2.5vw,14px);line-height:1.8}
+  #directing .cinema-reel{padding-inline:clamp(10px,3vw,22px);padding-bottom:56px}
+  #directing .virtual-cinema{margin-top:14px;touch-action:pan-y;cursor:default}
+  #directing .cinema-instructions{
+    align-items:center;
+    gap:10px;
+    margin-bottom:9px;
+    font-size:clamp(9px,1.8vw,11px);
+    line-height:1.45;
+    white-space:normal;
+  }
+  #directing .cinema-instructions b{font-size:clamp(15px,3.2vw,20px);text-align:center}
+  #directing .cinema-viewport{height:auto;min-height:0;overflow:hidden}
+  #directing .cinema-room{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    align-items:start;
+    column-gap:clamp(12px,4vw,28px);
+    row-gap:clamp(27px,5vw,44px);
+    height:auto;
+    min-height:0;
+    padding:clamp(20px,4vw,34px);
+    transform:none!important;
+  }
+  #directing .virtual-screen,
+  #directing .virtual-screen--1,
+  #directing .virtual-screen--2,
+  #directing .virtual-screen--3,
+  #directing .virtual-screen--4,
+  #directing .virtual-screen--5{
+    position:relative;
+    inset:auto;
+    width:100%;
+    min-width:0;
+    transform:none;
+    filter:none;
+  }
+  #directing .virtual-screen--1{order:1}
+  #directing .virtual-screen--2{order:2}
+  #directing .virtual-screen--5{
+    order:3;
+    grid-column:1/-1;
+    justify-self:center;
+    width:min(46%,280px);
+  }
+  #directing .virtual-screen--3{order:4}
+  #directing .virtual-screen--4{order:5}
+  #directing .virtual-screen-image{border-width:clamp(5px,1vw,7px);border-bottom-width:clamp(12px,2vw,17px)}
+  #directing .virtual-screen-image span{font-size:clamp(9px,1.7vw,11px);line-height:1.3}
+  #directing .virtual-screen small{
+    position:relative;
+    z-index:3;
+    display:block;
+    min-height:0;
+    margin-top:15px;
+    color:#f0cf87;
+    font-size:clamp(10px,2vw,12px);
+    line-height:1.5;
+    letter-spacing:.04em;
+    overflow:visible;
+    white-space:normal;
+  }
+  #directing .virtual-screen h2{
+    position:relative;
+    z-index:3;
+    min-height:2.9em;
+    margin:3px 0 0;
+    color:#fff4dc;
+    font-size:clamp(13px,2.8vw,17px);
+    line-height:1.45;
+    letter-spacing:.02em;
+    overflow:visible;
+    overflow-wrap:anywhere;
+  }
+}
+
+@media(max-width:420px){
+  #directing .cinema-reel{padding-bottom:44px}
+  #directing .cinema-room{column-gap:12px;row-gap:24px;padding:16px 14px 22px}
+  #directing .virtual-screen--5{width:min(47%,180px)}
+  #directing .cinema-instructions span{max-width:29%}
+  #directing .cinema-instructions b{max-width:42%}
+}
+
+@media(min-width:801px){
+  #directing .cinema-viewport{height:clamp(720px,82vw,920px)}
+  #directing .virtual-screen--1{top:3%}
+  #directing .virtual-screen--2{top:3%}
+  #directing .virtual-screen--5{top:36%}
+  #directing .virtual-screen--3{top:69%}
+  #directing .virtual-screen--4{top:69%}
+  #directing .cinema-instructions{font-size:10px;line-height:1.5}
+  #directing .virtual-screen-image span{font-size:10px}
+  #directing .virtual-screen small{font-size:11px;line-height:1.5}
+  #directing .virtual-screen h2{font-size:clamp(17px,1.5vw,20px);line-height:1.45}
+}
