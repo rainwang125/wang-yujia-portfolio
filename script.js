@@ -2,16 +2,55 @@ const tabs = document.querySelectorAll('[data-tab-link]');
 const panels = document.querySelectorAll('[data-panel]');
 const menuButton = document.querySelector('.menu-button');
 const nav = document.querySelector('.tabs');
+const transitionLayer = document.createElement('div');
+transitionLayer.className = 'page-transition';
+transitionLayer.setAttribute('aria-hidden', 'true');
+transitionLayer.innerHTML = '<span><i>✦</i> NOW SHOWING <i>✦</i></span>';
+document.body.append(transitionLayer);
+let panelSwitching = false;
+const wait = duration => new Promise(resolve => setTimeout(resolve, duration));
 
 function showPanel(id, behavior = 'smooth') {
   const target = document.getElementById(id);
-  if (!target) return;
+  if (!target || !target.matches('[data-panel]')) return;
   loadPanelImages(id);
+  panels.forEach(panel => {
+    const isActive = panel === target;
+    panel.classList.toggle('active', isActive);
+    panel.hidden = !isActive;
+    panel.setAttribute('aria-hidden', String(!isActive));
+  });
   tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.tabLink === id));
   nav.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false');
   target.scrollIntoView({ behavior, block: 'start' });
 }
-tabs.forEach(tab => tab.addEventListener('click', event => { event.preventDefault(); showPanel(tab.dataset.tabLink); history.replaceState(null, '', `#${tab.dataset.tabLink}`); }));
+async function switchPanel(id) {
+  const target = document.getElementById(id);
+  if (!target?.matches('[data-panel]') || panelSwitching) return;
+  if (target.classList.contains('active')) {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    return;
+  }
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    showPanel(id, 'auto');
+    return;
+  }
+  panelSwitching = true;
+  transitionLayer.classList.add('is-active');
+  await wait(480);
+  showPanel(id, 'auto');
+  await wait(80);
+  transitionLayer.classList.remove('is-active');
+  await wait(650);
+  panelSwitching = false;
+}
+tabs.forEach(tab => tab.addEventListener('click', event => {
+  event.preventDefault();
+  const id = tab.dataset.tabLink;
+  if (panelSwitching) return;
+  if (location.hash !== `#${id}`) history.pushState(null, '', `#${id}`);
+  switchPanel(id);
+}));
 menuButton.addEventListener('click', () => { const open = nav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', String(open)); });
 
 function renderWorks() {
@@ -175,20 +214,13 @@ function loadPanelImages(id) {
     if (!cover.style.backgroundImage) cover.style.backgroundImage = `url('${cover.dataset.image}')`;
   });
 }
-loadPanelImages(document.querySelector('.panel.active')?.id || 'home');
 document.querySelectorAll('.work-card[href="#"]').forEach(card => card.addEventListener('click', event => event.preventDefault()));
 const initialTab = location.hash.slice(1);
-if (document.getElementById(initialTab)) showPanel(initialTab, 'auto');
-
-/* 连续长镜头导航：随滚动更新当前章节，而不把其他内容藏起来。 */
-const chapterObserver = new IntersectionObserver(entries => {
-  const current = entries.filter(entry => entry.isIntersecting)
-    .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-  if (!current) return;
-  loadPanelImages(current.target.id);
-  tabs.forEach(tab => tab.classList.toggle('active', tab.dataset.tabLink === current.target.id));
-}, { rootMargin: '-28% 0px -54% 0px', threshold: [0.05, 0.2, 0.5] });
-panels.forEach(panel => chapterObserver.observe(panel));
+showPanel(document.getElementById(initialTab)?.matches('[data-panel]') ? initialTab : 'home', 'auto');
+window.addEventListener('popstate', () => {
+  const id = location.hash.slice(1);
+  switchPanel(document.getElementById(id)?.matches('[data-panel]') ? id : 'home');
+});
 
 function setupVirtualCinema() {
   document.querySelectorAll('[data-virtual-cinema]').forEach(cinema => {
