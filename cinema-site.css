@@ -673,3 +673,36 @@ body{letter-spacing:.025em;line-height:1.65}h1,h2,h3{word-break:normal;overflow-
 }
 .page-transition.is-active>span{opacity:1;transform:scale(1)}
 @media(prefers-reduced-motion:reduce){.page-transition{display:none}}
+
+/* 首页主创入口：提升视觉层级，同时保持影院票券质感。 */
+.lobby-about{
+  display:inline-flex;
+  align-items:center;
+  gap:.65em;
+  margin-top:18px;
+  padding:12px 18px;
+  color:#35212a;
+  background:linear-gradient(135deg,#f4dc99,#d9ad55);
+  border:2px solid #ffe8ad;
+  border-radius:999px;
+  box-shadow:0 5px 0 #2a1821,0 11px 22px #170a124d;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.07em;
+  line-height:1.2;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:transform .22s ease,box-shadow .22s ease,filter .22s ease;
+}
+.lobby-about::before{
+  content:'✦';
+  color:#8d3e59;
+  font-size:1.15em;
+}
+.lobby-about:hover,.lobby-about:focus-visible{
+  transform:translateY(-4px) rotate(-1deg);
+  box-shadow:0 8px 0 #2a1821,0 16px 30px #170a1266;
+  filter:brightness(1.06) saturate(1.08);
+}
+.lobby-about:focus-visible{outline:3px solid #efadb7;outline-offset:4px}
+@media(max-width:420px){.lobby-about{padding:11px 15px;font-size:12px;letter-spacing:.035em}}
